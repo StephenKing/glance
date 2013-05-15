@@ -12,7 +12,8 @@ verbose = <%= node["glance"]["verbose"] %>
 debug = <%= node["glance"]["debug"] %>
 
 # Address to bind the registry server
-bind_host = <%= @registry_bind_address %>
+# bind_host = <%= @registry_bind_address %>
+bind_host = 0.0.0.0
 
 # Port the bind the registry server to
 bind_port = <%= @registry_port %>
@@ -45,6 +46,13 @@ api_limit_max = 1000
 # If a `limit` query param is not provided in an api request, it will
 # default to `limit_param_default`
 limit_param_default = 25
+
+# ============ Filesystem Store Options ========================
+
+# TODO is duplicate
+# Directory that the Filesystem backend store
+# writes image data to
+filesystem_store_datadir = /var/lib/glance/images/
 
 # ================= Syslog Options ============================
 
